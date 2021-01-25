@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 *::after,
 *::before {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,9 +13,28 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #4cb1c0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(36, 111, 122, 0.8);
+    opacity: 0.5;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgba(36, 111, 122, 0.8);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsla(36, 111, 122, 0.8);
 }
 
 main {
@@ -19,6 +42,7 @@ main {
     background: linear-gradient(to right top, #7aebd6, #5bc6d6);
     display: grid;
     place-items: center;
+    position: relative;
 }
 
 .glass {
@@ -29,29 +53,119 @@ main {
     background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.2));
     border-radius: 2rem;
     z-index: 100;
+    display: flex;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.7), hsla(0, 0%, 100%, 0.3));
+}
+
+.one {
+    height: 20rem;
+    width: 20rem;
+    top: 5%;
+    right: 8%;
+}
+.two {
+    height: 15rem;
+    width: 15rem;
+    bottom: 5%;
+    left: 15%;
+}
+
+.dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.7), hsla(0, 0%, 100%, 0.3));
+}
+
+.link {
+    display: flex;
+    padding: 1rem 4rem;
+    align-items: center;
+}
+
+.link h2 {
+    margin-left: 2rem;
+}
+
+.pro {
+    text-align: left;
+    height: 22%;
+    padding: 2rem;
+    border-radius: 2rem;
+    color: white;
+    background: linear-gradient(to right top, #7aebd6, #5bc6d6);
     position: relative;
 }
 
-/* backdrop-filter: blur() funktioniert nicht mit ::after/::before */
-.glass::before,
-.glass:after {
-    content: '';
-    z-index: -1;
+.pro img {
     position: absolute;
-    border-radius: 50%;
-    background: white;
-    background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.2), hsla(0, 0%, 100%, 0.1));
+    right: 2rem;
+    bottom: 1rem;
+    width: 30%;
+    height: auto;
+}
+.games {
+    flex: 4;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.glass::before {
-    height: 20rem;
-    width: 20rem;
-    top: -5%;
-    right: -8%;
+.status {
+    margin: 3rem;
 }
-.glass::after {
-    height: 15rem;
-    width: 15rem;
-    bottom: -5%;
-    left: -15%;
+
+.status input {
+    border: none;
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.7), hsla(0, 0%, 100%, 0.3));
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2rem;
+    margin: 0.5rem 0;
+    padding: 1.4rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
+    background: linear-gradient(to right bottom, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.3));
+}
+
+.percentage {
+    color: #24bea2;
+}
+
+.progessBar {
+    margin-top: 1rem;
+    width: 100%;
+    height: 15%;
+    border-radius: 1rem;
+    background: hsla(0, 0%, 100%, 0.5);
+    opacity: 0.5;
+    position: relative;
+}
+
+.progessBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right top, #7aebd6, #5bc6d6);
+    width: 60%;
+    height: 100%;
+    border-radius: 1rem 0rem 0rem 1rem;
 }
